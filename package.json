@@ -1,5 +1,5 @@
 {
-  "name": "emaily",
+  "name": "emailyServer",
   "version": "1.0.0",
   "description": "A sample Express app",
   "main": "index.js",
@@ -9,8 +9,10 @@
   },
   "scripts": {
     "test": "karma",
+    "client": "npm run start --prefix client",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon index.js"
   },
   "author": "Chris McAnally",
   "license": "MIT",
@@ -22,6 +24,7 @@
     "passport-google-oauth20": "^1.0.0"
   },
   "devDependencies": {
+    "concurrently": "^3.5.1",
     "nodemon": "^1.14.7"
   }
 }
