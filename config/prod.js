@@ -8,4 +8,5 @@ module.exports = {
   stripeSecrect_Key: process.env.STRIPE_PRIVATE_KEY,
   stripePuplicKey: process.env.STRIPE_PUBLIC_KEY,
   sendGridKey: process.env.SENDGRIDKEY,
+  redirectDomain: process.env.REDIRECT_DOMAIN,
 };
