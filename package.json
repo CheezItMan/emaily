@@ -11,10 +11,10 @@
     "test": "karma",
     "client": "npm run start --prefix client",
     "start": "node index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
     "server": "nodemon index.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "webhook": "lt -p 5000 emaily-awesome.localtunnel.com"
+    "webhook": "./sendgrid_webhook.sh"
   },
   "author": "Chris McAnally",
   "license": "MIT",
@@ -23,9 +23,11 @@
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
     "localtunnel": "^1.8.3",
+    "lodash": "^4.17.4",
     "mongoose": "^5.0.0-rc1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^3.0.1",
     "sendgrid": "^5.2.3",
     "stripe": "^5.4.0"
   },
